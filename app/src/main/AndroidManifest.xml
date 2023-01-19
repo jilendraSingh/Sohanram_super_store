@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sohanram.superstore">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.sohanram.superstore.SharedPreference.Rajput"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Optimum"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.sohanram.superstore.Activity.UPIPaymentActivity"></activity>
+        <activity android:name="com.sohanram.superstore.Activity.SupportScreen" />
+        <activity android:name="com.sohanram.superstore.Activity.PaymentActivity" />
+        <activity android:name="com.sohanram.superstore.Activity.SuccessScreenActivity" />
+        <activity android:name="com.sohanram.superstore.Activity.OrderDetailsActivity" />
+        <activity android:name="com.sohanram.superstore.Activity.MyOrderActivity" />
+        <activity android:name="com.sohanram.superstore.Activity.OTPScreenActivity" />
+        <activity
+            android:name="com.sohanram.superstore.Activity.AddressFormActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.sohanram.superstore.Activity.AddressActivityList" />
+        <activity android:name="com.sohanram.superstore.Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.sohanram.superstore.Activity.LoginActivity" />
+        <activity
+            android:name="com.sohanram.superstore.Activity.CheckoutFinalActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.sohanram.superstore.Activity.HomeActivity" />
+        <activity android:name="com.sohanram.superstore.Activity.BaseActivity" />
+        <activity android:name="com.sohanram.superstore.Activity.MainActivity" />
+    </application>
+
+</manifest>

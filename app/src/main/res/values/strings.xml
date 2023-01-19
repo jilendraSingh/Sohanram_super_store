@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sohanram Super Store</string>
+    <string name="search_item">Search Item</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="logo2_otp">4 digit code sent to your number</string>
+    <string name="enter_reson_for_cancel">Enter Reson for Cancel Order</string>
+    <string name="Rs">\u20B9</string>
+</resources>
