@@ -128,11 +128,11 @@ public class CheckoutFinalActivity extends BaseActivity implements ItemClickList
                             qty += Float.parseFloat(totalCheckOutList.get(i).getItemCount());
                             JSONObject jsonObject = new JSONObject();
                             try {
-                                jsonObject.put("ItemCode", totalCheckOutList.get(i).getItemId());
-                                jsonObject.put("Rate", Float.parseFloat(totalCheckOutList.get(i).getItemPrice()));
-                                jsonObject.put("SaleRate", Float.parseFloat(totalCheckOutList.get(i).getItemPrice()));
-                                jsonObject.put("Qty", Float.parseFloat(totalCheckOutList.get(i).getItemCount()));
-                                jsonObject.put("Amount", Float.parseFloat(totalCheckOutList.get(i).getTotalCost()));
+                                jsonObject.put("itemCode", totalCheckOutList.get(i).getItemId());
+                                jsonObject.put("rate", Float.parseFloat(totalCheckOutList.get(i).getItemPrice()));
+                                jsonObject.put("saleRate", Float.parseFloat(totalCheckOutList.get(i).getItemPrice()));
+                                jsonObject.put("qty", Float.parseFloat(totalCheckOutList.get(i).getItemCount()));
+                                jsonObject.put("amount", Float.parseFloat(totalCheckOutList.get(i).getTotalCost()));
                                 jsonArray.put(jsonObject);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -242,18 +242,20 @@ public class CheckoutFinalActivity extends BaseActivity implements ItemClickList
 
             JSONObject jsonObject = new JSONObject();
             try {
-                jsonObject.put("SubTotal", Float.parseFloat(totalEffectiveCost));
-                jsonObject.put("Delivery", delivery);
-                jsonObject.put("Total", total);
-                jsonObject.put("Qty", qty);
-                jsonObject.put("DeliveryCharge", Float.parseFloat(deliverCharges));
-                jsonObject.put("CustomerName", name);
-                jsonObject.put("CustomerMobile", mobile);
-                jsonObject.put("CustomerAddress1", address1);
-                jsonObject.put("CustomerAddress2", address2);
-                jsonObject.put("MerchantRefID", optimum);
-                jsonObject.put("CheckoutDetails", totalCheckOutList);
-                jsonObject.put("RegisteredMobileNo", app.user.mobileNumber);
+                jsonObject.put("locationShortName", "Sohanram");
+                jsonObject.put("customerName", name);
+                jsonObject.put("customerMobile", mobile);
+                jsonObject.put("customerAddress1", address1);
+                jsonObject.put("customerAddress2", address2);
+                jsonObject.put("registeredMobileNo", app.user.mobileNumber);
+                jsonObject.put("subTotal", Float.parseFloat(totalEffectiveCost));
+                jsonObject.put("delivery", delivery);
+                jsonObject.put("total", total);
+                jsonObject.put("qty", qty);
+                jsonObject.put("deliveryCharge", Float.parseFloat(deliverCharges));
+                jsonObject.put("checkoutDetails", totalCheckOutList);
+
+
                 Log.e(TAG, "sendOrderRequest: " + jsonObject);
             } catch (JSONException e) {
                 e.printStackTrace();

@@ -145,10 +145,12 @@ public class MainActivity extends BaseActivity implements ItemClickListener, Che
         try {
             jsonObject.put("MerchantRefID", GLOBAL_KEY);
             jsonObject.put("DishCodes", new JSONArray(dishMenuCodeArray));
+            Log.e("TAG", "updateLatestPrice: "+jsonObject.toString() );
         } catch (JSONException e) {
             e.printStackTrace();
         }
         final String url = URLConstants.BASE_URL + URLConstants.URL_LATEST_PRICE_DETAIL;
+        Log.e("TAG", "updateLatestPrice  API: "+url );
         AndroidNetworking.post(url)
                 .addJSONObjectBody(jsonObject) // posting json
                 .setTag("test")
@@ -157,6 +159,7 @@ public class MainActivity extends BaseActivity implements ItemClickListener, Che
                 .getAsJSONArray(new JSONArrayRequestListener() {
                     @Override
                     public void onResponse(JSONArray response) {
+                        Log.e("TAG", "AndroidNetworking onResponse: "+response );
                         if (response.length() > 0) {
                             for (int i = 0; i < response.length(); i++) {
                                 try {

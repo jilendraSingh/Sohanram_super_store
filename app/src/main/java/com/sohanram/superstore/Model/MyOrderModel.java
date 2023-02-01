@@ -50,13 +50,13 @@ public class MyOrderModel {
         this.orderStatus = orderStatus;
     }
 
-    @SerializedName("OrderStatus")
+    @SerializedName("orderStatus")
     @Expose
     private String orderStatus;
 
 
 
-    @SerializedName("OrderDetails")
+    @SerializedName("orderDetails")
     @Expose
     private ArrayList<OrderDetail> orderDetails = null;
 

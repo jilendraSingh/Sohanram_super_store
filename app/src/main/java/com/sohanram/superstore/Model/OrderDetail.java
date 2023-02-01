@@ -6,19 +6,19 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class OrderDetail implements Serializable {
-    @SerializedName("CheckoutId")
+    @SerializedName("checkoutId")
     @Expose
     private String checkoutId;
-    @SerializedName("DishName")
+    @SerializedName("dishName")
     @Expose
     private String dishName;
-    @SerializedName("Rate")
+    @SerializedName("rate")
     @Expose
     private String rate;
-    @SerializedName("Qty")
+    @SerializedName("qty")
     @Expose
     private String qty;
-    @SerializedName("Amount")
+    @SerializedName("amount")
     @Expose
     private String amount;
 
