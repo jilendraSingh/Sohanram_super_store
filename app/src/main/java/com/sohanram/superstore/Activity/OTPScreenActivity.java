@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sohanram.superstore.Model.OTPResponseModel;
 import com.sohanram.superstore.R;
@@ -35,7 +36,6 @@ public class OTPScreenActivity extends BaseActivity {
         if (getIntent().getExtras() != null) {
             String mobileNumber = getIntent().getStringExtra("MOBILE_NUMBER");
             tvMobileNumber.setText(mobileNumber);
-            getOTPRequest(mobileNumber);
         }
 
         OtpTextView otpTextView;
@@ -67,6 +67,12 @@ public class OTPScreenActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+       getOTPRequest(tvMobileNumber.getText().toString());
+    }
+
     private void getOTPRequest(String mobileNumber) {
         if (isNetworkAvailable()) {
             APIServiceClass.getInstance().getOTPRequest(GLOBAL_KEY, mobileNumber, new ResultHandler<OTPResponseModel>() {
@@ -74,6 +80,8 @@ public class OTPScreenActivity extends BaseActivity {
                 public void onSuccess(OTPResponseModel data) {
                     OTP_CODE = data.getOtp();
                     showToast(OTP_CODE);
+                    Log.e(TAG, "onSuccess: OTP "+data.getOtp() );
+
                 }
 
                 @Override

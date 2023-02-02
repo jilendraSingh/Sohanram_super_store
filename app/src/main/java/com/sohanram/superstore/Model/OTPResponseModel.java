@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class OTPResponseModel {
-    @SerializedName("OTP")
+    @SerializedName("otp")
     @Expose
     private String otp;
 
